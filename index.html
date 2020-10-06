@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="main.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+
+		<title>Startseite</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="dashboard-container">
+				<a
+					href="https://my.proarbeit.ch/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+				</a>
+			</div>
+			<main>
+				<section class="dateTime">
+					<time id="time-display" class="time"></time>
+					<div id="date-display" class="date"></div>
+				</section>
+				<section class="page-title">
+					<h1>
+						<span id="greeting"></span>
+						<span id="userName">Goran</span>
+					</h1>
+				</section>
+				<section class="google-search">
+					<form
+						action="https://www.google.ch/search"
+						class="searchform"
+						method="get"
+						id="searchform"
+						target="_blank"
+					>
+						<!-- <input name="sitesearch" type="hidden" value="Google Suche" /> -->
+						<input
+							autocomplete="on"
+							class="form-control search"
+							name="q"
+							placeholder="Google Suche"
+							required="required"
+							type="search"
+							id="google-input"
+						/>
+						<!-- <button class="button" type="submit" id="google-search-btn">
+								Search
+							</button> -->
+					</form>
+				</section>
+			</main>
+		</div>
+		<footer class="footer-container">
+			<div class="timer-wrapper">
+				<button id="timer-input-show">
+					<i class="material-icons"> timer </i>
+				</button>
+				<section class="timer-input">
+					<div class="input-text">
+						<label id="input-label"
+							>Bitte geben Sie die gewünschte Uhrzeit für die Pause ein:</label
+						>
+					</div>
+					<div class="input-timer">
+						<input
+							type="number"
+							id="hour"
+							min="8"
+							max="17"
+							placeholder="Stunde"
+							autofocus
+						/>
+						<input
+							type="number"
+							id="min"
+							min="0"
+							max="59"
+							placeholder="Minute"
+						/>
+					</div>
+					<div class="input-buttons">
+						<button id="start_stop" onclick="setTimer()">Start</button>
+						<button id="pause" onclick="pause()">Pause</button>
+						<button id="reset" onclick="reset()">Reset</button>
+					</div>
+				</section>
+				<div id="timer-display">Pausen-Countdown</div>
+			</div>
+			<div class="goal-wrapper">
+				<section class="personal-goal">
+					<h2>Was ist dein heutiges Ziel?</h2>
+					<span id="displayGoal" contenteditable="true"></span>
+				</section>
+			</div>
+			<div class="bg-set-wrapper">
+				<div class="bg-set-container">
+					<button id="bg-set-1" onclick="setBg(0)">Bg1</button>
+				</div>
+				<div class="bg-set-container">
+					<button id="bg-set-2" onclick="setBg(1)">Bg2</button>
+				</div>
+				<div class="bg-set-container">
+					<button id="bg-set-3" onclick="setBg(2)">Bg3</button>
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script src="index.js" async></script>
+	<script src="stopWatch.js" async></script>
+	<script src="toggle.js" async></script>
+</html>
